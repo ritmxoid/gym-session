@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border: 3px solid #555;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  background: #222;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+.custom-checkbox:checked {
+  background-color: #ff4081;
+  border-color: #ff4081;
+  transform: scale(1.05);
+}
+
+.press-card .custom-checkbox:checked {
+  background-color: #00e5ff;
+  border-color: #00e5ff;
+}
+
+.custom-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  color: #fff;
+  font-weight: 900;
+  left: 8px;
+  top: 2px;
+  font-size: 24px;
+}
+
+@keyframes pulse-shadow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 82, 82, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+.animate-pulse-shadow {
+  animation: pulse-shadow 2s infinite;
+}
